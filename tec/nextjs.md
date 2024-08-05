@@ -35,6 +35,10 @@ page.js为该文件夹默认访问的路由，若文件没有page.js，则该路
 
 动态路由：当不知道确切的名称并想要从动态数据创建路由时，可以使用动态路由，例如（商品详情，但不知道是那个商品详情）
 
+
 ![image-20240802165026271](./img/image-20240802165026271.png)
 
-当一个文件夹下创建了两个动态路由，控制台将会提示报错Failed to reload dynamic routes: Error: You cannot use different slug names for the same dynamic path ('id' !== 'a') ， 在同一文件夹最多只有一个动态路由
+当一个文件夹下（上图）创建了两个动态路由，控制台将会提示报错Failed to reload dynamic routes: Error: You cannot use different slug names for the same dynamic path ('id' !== 'a') ， 在同一文件夹最多只有一个动态路由且可选路由是最后一段
+
+动态路由有可选的catch-all段，在表达上使用`[[...folderName]]`表示,与`[...folderName]`的区别是前者在访问没有参数的路由也会匹配，例如
+app/shop/[...slug]/page.js 和 app/shop/[[...slug]]/page.js 前者在访问 /shop时会404 ， 后者可以匹配到/shop页面
