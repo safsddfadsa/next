@@ -2,10 +2,10 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 
-export default function ProductsId(props:any) {
+export default function ProductsId(props:any , team:any) {
   const router = useRouter()
   const na = usePathname()
-    console.log(props,12);
+    console.log(props,team,12);
     
     return (
       <h1 onClick={() => {

@@ -42,3 +42,6 @@ page.js为该文件夹默认访问的路由，若文件没有page.js，则该路
 
 动态路由有可选的catch-all段，在表达上使用`[[...folderName]]`表示,与`[...folderName]`的区别是前者在访问没有参数的路由也会匹配，例如
 app/shop/[...slug]/page.js 和 app/shop/[[...slug]]/page.js 前者在访问 /shop时会404 ， 后者可以匹配到/shop页面
+
+`路由跳转API`：https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating
+
